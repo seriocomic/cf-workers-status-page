@@ -1,5 +1,5 @@
 settings:
-  title: 'Status Page'
+  title: 'Not Srio.us - Status Page'
   url: 'https://not.srio.us' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
   daysInHistogram: 90 # number of days you want to display in histogram
@@ -22,10 +22,10 @@ monitors:
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
-    linkable: false # allows the title to be a link, default=true
+    linkable: true # allows the title to be a link, default=true
 
   - id: chudfarm-tunnel
-    name: tunnel.chudfarm.com
+    name: Chudfarm Tunnel
     description: 'From the Web to Home'
     url: 'https://tunnel.chudfarm.com'
     method: GET
