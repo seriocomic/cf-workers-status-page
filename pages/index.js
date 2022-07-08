@@ -46,26 +46,7 @@ export default function Index({ config, kvMonitors, kvMonitorsLastUpdate }) {
       <Head>
         <title>{config.settings.title}</title>
         <link rel="stylesheet" href="./style.css" />
-        <script>
-          {`
-          function setTheme(theme) {
-            document.documentElement.classList.remove("dark", "light")
-            document.documentElement.classList.add(theme)
-            localStorage.theme = theme
-          }
-          (() => {
-            const query = window.matchMedia("(prefers-color-scheme: dark)")
-            query.addListener(() => {
-              setTheme(query.matches ? "dark" : "light")
-            })
-            if (["dark", "light"].includes(localStorage.theme)) {
-              setTheme(localStorage.theme)
-            } else {
-              setTheme(query.matches ? "dark" : "light")
-            }
-          })()
-          `}
-        </script>
+        <script>{`function setTheme(theme){document.documentElement.classList.remove("dark","light");document.documentElement.classList.add(theme);localStorage.theme=theme}(()=>{const query=window.matchMedia("(prefers-color-scheme: dark)");query.addListener(()=>{setTheme(query.matches?"dark":"light")});if(["dark","light"].includes(localStorage.theme)){setTheme(localStorage.theme)}else{setTheme(query.matches?"dark":"light")}})();`}</script>
       </Head>
       <div className="container mx-auto px-4">
         <div className="flex flex-row justify-between items-center p-4">
@@ -100,12 +81,7 @@ export default function Index({ config, kvMonitors, kvMonitorsLastUpdate }) {
             </a>
           </div>
           <div>
-            <a
-              href="https://github.com/eidam/cf-workers-status-page"
-              target="_blank"
-            >
-              Get Your Status Page
-            </a>
+            Serverless Status Page
           </div>
         </div>
       </div>
