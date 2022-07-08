@@ -2,7 +2,7 @@ settings:
   title: 'Not Srio.us - Status Page'
   url: 'https://not.srio.us' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 90 # number of days you want to display in histogram
+  daysInHistogram: 30 # number of days you want to display in histogram - default was 90
   collectResponseTimes: true # collects avg response times from CRON locations
 
   allmonitorsOperational: 'All Systems Operational'
@@ -27,14 +27,21 @@ monitors:
   - id: chudfarm-tunnel
     name: Chudfarm Tunnel
     description: 'From the Web to Home'
-    url: 'https://tunnel.chudfarm.com'
+    url: 'https://tunnel.chudfarm.com/'
     method: GET
     expectStatus: 200
-    linkable: true # allows the title to be a link, default=true
+    linkable: true
 
   - id: cryptex-site
     name: The Cryptex
     url: 'https://cryptex.site/'
     method: GET
     expectStatus: 403
+    linkable: true
+    
+  - id: chudmail-com
+    name: Chudmail
+    url: 'https://chudmail.com/'
+    method: GET
+    expectStatus: 200
     linkable: true
